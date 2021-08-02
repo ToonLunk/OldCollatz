@@ -4,14 +4,22 @@
 # import pretty print module to print the list at the end
 from pprint import pprint 
 
+def showInfo(numList): # function for displaying information about sequence
+    if(len(numList) < 0):
+        exit(2)
+    else:
+        print(len(numList))
+        print("\nSequence (starting with seed): ")
+        pprint(numList) # print out the list
+        print("\nTotal nodes in sequence: ", len(numList))
+        wait = input("\nPress 'Enter' to continue.") # to wait (if using in CMD/Terminal/Emulator)
+
 num = 1
 numList = [] # list of nodes encountered
 stars = 1 # how many stars to print
 
-while(num != 0): # if the user enters "0", end the program
-    num = int(input("\nEnter '0' to exit, or enter new seed number: ")) # get user input
-    if(num == 0): # check if zero; if zero, exit
-        exit(1) # send exit code 1
+while(True): 
+    num = int(input("\nEnter '4' to exit, or enter new seed number: ")) # get user input
     while(num != 4): # once the sequence hits 4, the closed loop begins
         stars = num / 10 # calculate the number of stars to display
         print(int(num), end=" ") # shows the number at base of stars
@@ -25,8 +33,5 @@ while(num != 0): # if the user enters "0", end the program
             num = (num * 3) + 1 # multiply by 3, add 1
         else:
             num /= 2 # if the number is even, divide by 2
-        
-    print("\nSequence (starting with seed): ")
-    pprint(numList) # print out the list
-    print("\nTotal nodes in sequence: ", len(numList))
-    wait = input("\nPress 'Enter' to continue.") # to wait (if using in CMD/Terminal/Emulator)
+       
+    showInfo(numList)
