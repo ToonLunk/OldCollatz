@@ -9,6 +9,10 @@ def showInfo(numList):  # function for displaying information about sequence
     if(len(numList) == 0):
         exit(2)
     else:
+        # 1 has to be appended since it's the escape character
+        numList.append(1)
+        print("\n'*' represents tens, '@' represents hundreds, and '+' shows that the number continues.")
+
         print("\nSequence (starting with seed): ")
         pprint(numList)  # print out the list
         print("\nTotal nodes in sequence: ", len(numList))
@@ -58,10 +62,6 @@ def main():
                 num = (num * 3) + 1  # multiply by 3, add 1
             else:
                 num /= 2  # if the number is even, divide by 2
-        # if the while loop reached 1, then 1 must be added.
-        numList.append(1)
-
-        print("\n'*' represents tens, '@' represents hundreds, and '+' shows that the number continues.")
 
         showInfo(numList)  # display the information about the sequence
 
