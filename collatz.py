@@ -2,36 +2,69 @@
 # 4, 2, then 1. That fact is unproven though - can you find an exception?
 
 # import pretty print module to print the list at the end
-from pprint import pprint 
+from pprint import pprint
 
-def showInfo(numList): # function for displaying information about sequence
-    if(len(numList) < 0):
+
+def showInfo(numList):  # function for displaying information about sequence
+    if(len(numList) == 0):
         exit(2)
     else:
-        print(len(numList))
         print("\nSequence (starting with seed): ")
-        pprint(numList) # print out the list
+        pprint(numList)  # print out the list
         print("\nTotal nodes in sequence: ", len(numList))
-        wait = input("\nPress 'Enter' to continue.") # to wait (if using in CMD/Terminal/Emulator)
+        # to wait (if using in CMD/Terminal/Emulator)
+        wait = input("\nPress 'Enter' to continue.")
 
-num = 1
-numList = [] # list of nodes encountered
-stars = 1 # how many stars to print
 
-while(True): 
-    num = int(input("\nEnter '4' to exit, or enter new seed number: ")) # get user input
-    while(num != 4): # once the sequence hits 4, the closed loop begins
-        stars = num / 10 # calculate the number of stars to display
-        print(int(num), end=" ") # shows the number at base of stars
-        
-        for i in range(0, int(stars) +1): # for each 10's place in num, 
-            print("*",end="")            # add a star
-        print("@") # for whitespace after stars
-        numList.append(int(num)) # append the new sequence number to a list
-        
-        if (num % 2 == 1): # if the number is odd, 
-            num = (num * 3) + 1 # multiply by 3, add 1
-        else:
-            num /= 2 # if the number is even, divide by 2
-       
-    showInfo(numList)
+def main():
+    num = 1  # user input
+    stars = 1  # how many stars to print
+
+    while(True):
+        # get user input
+        numList = []  # list of nodes encountered
+        num = int(input("\nEnter '1' to exit, or enter new seed number: "))
+        while(num != 1):  # once the sequence hits 1, the closed loop begins
+            hundreds = 0
+            stars = num / 10  # calculate the number of stars to display
+
+            if num > 100:  # if the number is in the thousands,
+                # show a plus symbol for each hundred
+                hundreds = (num / 100) + 1
+                stars = -1  # show no stars
+
+            print(int(num), end=" ")  # shows the number at base of stars
+
+            tenCount = 0
+            for i in range(0, int(stars) + 1):  # for each 10's place in num,
+                print("*", end="")            # add a star
+                tenCount += 1
+                if(tenCount > 100):
+                    print("+")
+
+            hunCount = 0  # count how many '@' have been printed
+            for i in range(1, int(hundreds)):  # for 100's place
+                hunCount += 1
+                print("@", end="")  # add an '@'
+                if (hunCount > 100):
+                    print("+")
+                    break
+
+            print()  # for space between rows
+            # append the new sequence number to a list
+            numList.append(int(num))
+
+            if (num % 2 == 1):  # if the number is odd,
+                num = (num * 3) + 1  # multiply by 3, add 1
+            else:
+                num /= 2  # if the number is even, divide by 2
+        # if the while loop reached 1, then 1 must be added.
+        numList.append(1)
+
+        print("\n'*' represents tens, '@' represents hundreds, and '+' shows that the number continues.")
+
+        showInfo(numList)  # display the information about the sequence
+
+
+# begin the program
+main()
