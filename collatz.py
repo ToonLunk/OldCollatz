@@ -22,4 +22,4 @@ while(num != 0): # if the user enters "0", end the program
             num /= 2 # if the number is even, divide by 2
         
     pprint(numList)
-    wait = input()
+    wait = input() # to wait (if using in CMD/Terminal/Emulator)
