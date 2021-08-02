@@ -1,8 +1,11 @@
+# This program is based on the Collatz Conjecture. Any number you input will eventually lead to the numbers
+# 4, 2, then 1. That fact is unproven though - can you find an exception?
+
 # import pretty print module to print the list at the end
 from pprint import pprint 
 
 num = 1
-numList = [] # list of 
+numList = [] # list of nodes encountered
 stars = 1 # how many stars to print
 
 while(num != 0): # if the user enters "0", end the program
@@ -24,6 +27,6 @@ while(num != 0): # if the user enters "0", end the program
             num /= 2 # if the number is even, divide by 2
         
     print("\nSequence (starting with seed): ")
-    pprint(numList)
+    pprint(numList) # print out the list
     print("\nTotal nodes in sequence: ", len(numList))
     wait = input("\nPress 'Enter' to continue.") # to wait (if using in CMD/Terminal/Emulator)
