@@ -5,6 +5,7 @@
 import time
 from tkinter import *
 from pprint import pprint
+from typing import List
 
 
 def showInfo(numList):  # function for displaying information about sequence
@@ -65,20 +66,24 @@ def getCollatz():
             else:
                 num /= 2  # if the number is even, divide by 2
 
-        showInfo(numList)  # display the information about the sequence
+        # showInfo(numList)  # display the information about the sequence
+        return numList
 
 
 # begin the program
-# getCollatz()  # commented out!!!!!!!!!!!!!!!
+numList = getCollatz()  # commented out!!!!!!!!!!!!!!!
+showInfo(numList)
+# # the window
+# screen = Tk()
+# screen.title("Collatz Conjecture")
+# screen.geometry("500x500")
 
-# the window
-screen = Tk()
-screen.title("Collatz Conjecture")
-screen.geometry("500x500")
+# listbox = Listbox(screen)
+# listbox.pack()
 
-# the insides of the window
-welcomeText = Label(text="Welcome!",
-                    fg="white", bg="#1f1f1f")
-welcomeText.pack()
+# # the insides of the window
+# welcomeText = Label(text="Welcome!",
+#                     fg="white", bg="#1f1f1f")
+# welcomeText.pack()
 
-screen.mainloop()
+# screen.mainloop()
