@@ -2,6 +2,8 @@
 # 4, 2, then 1. That fact is unproven though - can you find an exception?
 
 # import pretty print module to print the list at the end
+import time
+from tkinter import *
 from pprint import pprint
 
 
@@ -20,7 +22,7 @@ def showInfo(numList):  # function for displaying information about sequence
         wait = input("\nPress 'Enter' to continue.")
 
 
-def main():
+def getCollatz():
     num = 1  # user input
     stars = 1  # how many stars to print
 
@@ -67,4 +69,16 @@ def main():
 
 
 # begin the program
-main()
+# getCollatz()  # commented out!!!!!!!!!!!!!!!
+
+# the window
+screen = Tk()
+screen.title("Collatz Conjecture")
+screen.geometry("500x500")
+
+# the insides of the window
+welcomeText = Label(text="Welcome!",
+                    fg="white", bg="#1f1f1f")
+welcomeText.pack()
+
+screen.mainloop()
