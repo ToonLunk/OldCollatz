@@ -2,7 +2,7 @@ from collatz import *
 
 # TKINTER/GRAPHICS SECTION
 
-# get user input
+# get user input!
 
 
 def addButton(number, symbol, buttonColor, curFrame):
