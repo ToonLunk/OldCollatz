@@ -2,18 +2,10 @@
 # 4, 2, then 1. That fact is unproven though - can you find an exception?
 
 
-import time
 # import tkinter for graphics
 from tkinter import *
 # import pretty print module to print the list at the end
 from pprint import pprint
-
-
-def wait():  # use wait() to wait 1 second
-    time.sleep(1)
-
-# legacy
-
 
 def showInfo(numList):  # function for displaying information about sequence
     if(len(numList) == 0):
