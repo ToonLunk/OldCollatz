@@ -1,0 +1,88 @@
+body {
+    background-color: #FF9A5C;
+}
+
+/* the input div */
+#inputDiv {
+    /* positioning */
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    /* styling */
+}
+
+#inputDiv form {
+    /* positioning */
+    margin-left: auto;
+    margin-right: auto;
+    /* styling */
+    background-color: #B7CDB8;
+    padding: 12px;
+    /* border */
+    border-radius: 10px;
+}
+
+#inputDiv label {
+    /* posititioning */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    /* styling */
+    
+}
+
+#inputDiv #numberToCalc {
+    /* positioning */
+    margin-left: 30%;
+    width: 30%;
+    /* styling */
+    background-color: #F5F5F5;
+}
+
+/* #submitNumBtn {
+
+} */
+
+/* the main, where the new numbers are */
+main {
+    /* positioning */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 60%;
+    /* styling */
+    background-color: #B7CDB8;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 12px;
+
+}
+
+/* the new numbers that are created */
+.numberNode {
+    /* positioning */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+    /* styling */
+    background-color: #F5F5F5;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    padding: 10px;
+    /* border */
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.numberNode p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline;
+}
+
+.numberNode span {
+    display: inline;
+    float: right;
+}

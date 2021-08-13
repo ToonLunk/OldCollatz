@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collatz Conjecture</title>
+</head>
+
+<body>
+    <div id="inputDiv">
+        <form id="getInputForm">
+            <label for="numberToCalc">Please input a number:</label>
+            <input type="text" id="numberToCalc" placeholder="Enter a whole number">
+
+            <button id="submitNumBtn" onclick="enterNum()" type="button">Enter</button>
+        </form>
+    </div>
+
+    <main id="main">
+        <!-- all of the new content will load here! -->
+        <div class="numberNode">
+            <p>Can you find a solution that doesn't end up with 1?</p>
+        </div>
+    </main>
+</body>
+
+
+<!-- scripts -->
+
+<!-- for the logger -->
+<script src="scripts/logger.js"></script>
+
+<!-- for the math stuffs (the whole program) -->
+<script src="scripts/maths.js"></script>
+
+</html>
